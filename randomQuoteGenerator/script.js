@@ -1,26 +1,26 @@
-const quoteElement = document.getElementById("quote");
+const p = document.getElementById('quote');
 
-const quote = ["what", "the", "hell", "is", "wrong", "with", "you"];
 
-const usedIndex = new Set();
+const set = new Set();
 
-function generateQuote(){
-    if (usedIndex.size >= quote.length) {
-        usedIndex.clear()
+const quotes = ["what", "the", "hell", "sheesh"]
+
+function generateQuote() {
+
+    if (set.size === quotes.length) {
+        set.clear()
     }
-
     while (true) {
+        const rndIndex = Math.floor(Math.random() * quotes.length);
 
-        const randomQuote = Math.floor(Math.random() * quote.length);
+        if (set.has(rndIndex)) continue;
 
-        if (usedIndex.has(randomQuote)) continue
-        
-        const selectedQuote = quote[randomQuote];
-        quoteElement.innerHTML = selectedQuote;
-        usedIndex.add(randomQuote);
-        break
+        set.add(rndIndex);
+        p.innerText = quotes[rndIndex];
+    
+        break;
     }
-
+    
+    
+        
 }
-
-

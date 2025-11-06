@@ -4,32 +4,35 @@ const time = document.getElementById("time");
 
 
 function padStart(value){
-    return String(value).padStart(2,"0");
+    return String(value).padStart(2, "0");
 }
 
-function setTime(){
+function setTime() {
     const minutes = Math.floor(secondElapse / 60);
     const seconds = secondElapse % 60;
-    time.innerHTML = `${padStart(minutes)}:${padStart(seconds)}`;
+    time.innerText = `${padStart(minutes)}:${padStart(seconds)}`;
 }
 
-function timer(){
+
+function timer() {
     secondElapse++;
     setTime()
 }
 
-
-function startClock(){
-    if (interval) stopClock()
+function start() {
+    if (interval) {
+        stop()
+    } 
+    
     interval = setInterval(timer, 1000)
 }
 
-function stopClock(){
-    clearInterval(interval)
+function stop() {
+    clearInterval(interval);
 }
 
-function resetClock(){
-    stopClock()
+function reset() {
+    stop();
     secondElapse = 0;
     setTime()
 }

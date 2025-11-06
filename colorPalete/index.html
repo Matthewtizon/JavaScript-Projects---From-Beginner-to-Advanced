@@ -3,19 +3,32 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Color Flipper</title>
+    <title>Color Palete</title>
     <style>
+        button{
+            padding: 20px;
+            margin: 10px;
+            border: 2px solid pink;
+            border-radius: 30px;
+        }
         
+        #green{
+            background-color: green;
+        }
+        #red{
+            background-color: red;
+        }
+        #blue{
+            background-color: blue;
+        }
     </style>
 </head>
 <body>
-    <h2>Color Flipper</h2>
-
+    <h2>Color Palete</h2>
     <button id="green" onclick="setColor('green')">Green</button>
-    <button id="blue" onclick="setColor('blue')">Blue</button>
     <button id="red" onclick="setColor('red')">Red</button>
-    <button onclick="randomColor()">Random</button>
-
+    <button id="blue" onclick="setColor('blue')">Blue</button>
+    <button id="random" onclick="random()">Random Color</button>
     <script src="colorPalete.js"></script>
 </body>
 </html>

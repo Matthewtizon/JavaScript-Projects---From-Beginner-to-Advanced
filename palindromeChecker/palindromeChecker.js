@@ -1,18 +1,18 @@
-const input = document.getElementById("input");
+const inputCheck = document.getElementById('check');
 
 
-function reverseCheck(str){
+function reversString(str) {
     return str.split("").reverse().join("");
 }
 
-
 function check(){
-    const value = input.value;
-    const reverse =  reverseCheck(value);
-    if (value === reverse) {
-        alert("Palindrome")
+    const value = inputCheck.value;
+    //console.log(copyValue)
+    //alert(value)
+    if (value !== reversString(value)) {
+        alert("Not Palindrome")
     } else {
-        alert("not")
+        alert("A Palindrome")
     }
+    inputCheck.value = "";
 }
-
